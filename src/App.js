@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from '~/components/Button'
-
+import Button from '~/components/Button';
 
 function App() {
     return (
-      <div>
-        <Button/>
-      </div>
-    )
+        <div>
+            <Button />
+        </div>
+    );
 }
 
 export default App;
