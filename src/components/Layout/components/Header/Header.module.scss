@@ -104,6 +104,9 @@
             color: rgba(22, 24, 35, 0.5);
         }
         .actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             .upload {
                 color: #161823;
                 padding: 0 16px;

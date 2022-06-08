@@ -1,10 +1,11 @@
+// Menu
 .menu-list {
     width: 240px;
     .menu-item {
         justify-content: flex-start;
         margin-left: 0;
         width: 100%;
-        height: 40px;
+        height: 42px;
         color: var(--textColor);
         font-weight: 600;
         border-radius: 0;
@@ -16,4 +17,28 @@
 
 .menu-popper {
     padding-bottom: 8px;
+}
+
+// Menu Header Language
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    // padding: 0 30px 0 10px;
+    padding-right: 30px;
+    margin-top: -8px;
+    color: var(--textColor);
+}
+
+.back-btn {
+    background-color: transparent;
+    font-size: 22px;
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+}
+
+.header-title {
+    font-weight: 600;
 }
