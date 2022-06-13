@@ -4,7 +4,7 @@
     --primaryColor: #fe2c55;
     --blackColor: #000;
     --whiteColor: #fff;
-    --textColor: #333;
+    --textColor: #161823;
     //Default Layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
@@ -37,4 +37,22 @@ input,
 a[href] {
     color: var(--textColor);
     text-decoration: none;
+}
+
+// Custom tippy tooltip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
 }
