@@ -39,9 +39,9 @@
                 background-color: transparent;
                 color: var(--blackColor);
                 caret-color: var(--primaryColor);
-                &:not(:placeholder-shown)~.search-btn {
-                    color: rgba(22, 24, 35, 0.75);
-                }
+                // &:not(:placeholder-shown)~.search-icon {
+                //     fill: rgba(22, 24, 35, 0.75);
+                // }
             }
             .clear,
             .load {
@@ -62,6 +62,9 @@
                 display: none;
             }
             &-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: relative;
                 height: var(--search-height);
                 width: var(--search-btn-width);
@@ -69,7 +72,6 @@
                 border-top-right-radius: var(--search-boder-radius);
                 border-bottom-right-radius: var(--search-boder-radius);
                 background-color: transparent;
-                color: rgba(22, 24, 35, 0.34);
                 transition: 0.2s;
                 cursor: pointer;
                 &:hover {
@@ -127,16 +129,18 @@
                 margin-left: 16px;
                 cursor: pointer;
             }
-            .action-icon {
+            .send-icon,
+            .message-icon {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 2rem;
-                padding: 4px;
                 margin-left: 16px;
                 color: #161823;
                 background-color: transparent;
                 cursor: pointer;
+            }
+            .send-icon {
+                padding: 3px;
             }
             .user-avatar {
                 cursor: pointer;

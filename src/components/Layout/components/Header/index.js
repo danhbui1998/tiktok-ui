@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGears,
     faKeyboard,
-    faMagnifyingGlass,
-    faPlus,
     faSignOut,
     faSpinner,
     faUser,
@@ -25,8 +23,9 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import { Link } from 'react-router-dom';
 import Menu from '~/components/Popper/Menu';
+import { MessageIcon, InboxIcon, SearchIcon, AddIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -81,7 +80,7 @@ function Header() {
                     visible={searchResult.length > 0}
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex={-1} {...attrs}>
-                            <PopperWrapper>
+                            <PopperWrapper className={undefined}>
                                 <h3 className={cx('search-title')}>Accounts</h3>
                                 <AccountItem />
                                 <AccountItem />
@@ -101,19 +100,19 @@ function Header() {
                         <FontAwesomeIcon className={cx('load')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </TippyHeadless>
                 <div className={cx('actions')}>
-                    <Button leftIcon={<FontAwesomeIcon icon={faPlus} />} className={cx('upload')} to="/upload">
+                    <Button leftIcon={<AddIcon />} className={cx('upload')} to="/upload">
                         Tải lên
                     </Button>
                     {!isLogin ? (
                         <>
                             <Button primary>Đăng nhập</Button>
 
-                            <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
+                            <Menu items={MENU_ITEMS} onChange={() => handleMenuChange}>
                                 <button className={cx('more-btn')}>
                                     <FontAwesomeIcon icon={faEllipsisVertical} />
                                 </button>
@@ -122,17 +121,17 @@ function Header() {
                     ) : (
                         <>
                             <Tippy delay={[0, 100]} content="Tin nhắn" placement="bottom">
-                                <button className={cx('action-icon')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                <button className={cx('send-icon')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 100]} content="Hộp thư" placement="bottom">
-                                <button className={cx('action-icon')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                <button className={cx('message-icon')}>
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
-                            <Menu items={userMenu} onChange={handleMenuChange}>
-                                <img className={cx('user-avatar')} src={images.avatar1} alt="user" />
+                            <Menu items={userMenu} onChange={() => handleMenuChange}>
+                                <Image className={cx('user-avatar')} src={images.avatar1} alt="user" />
                             </Menu>
                         </>
                     )}
