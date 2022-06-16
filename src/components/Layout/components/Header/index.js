@@ -1,31 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
-    faCircleXmark,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGears,
     faKeyboard,
     faSignOut,
-    faSpinner,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/';
-import TippyHeadless from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
 import Button from '~/components/Button';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
+
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
-import { MessageIcon, InboxIcon, SearchIcon, AddIcon } from '~/components/Icons';
+import { MessageIcon, InboxIcon, AddIcon } from '~/components/Icons';
 import Image from '~/components/Image';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
@@ -56,14 +53,6 @@ const userMenu = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
-
     // Xử lý Logic Item
     const handleMenuChange = (menuItem) => {
         // console.log(menuItem);
@@ -75,35 +64,7 @@ function Header() {
                 <Link to="/" className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
-                <TippyHeadless
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex={-1} {...attrs}>
-                            <PopperWrapper className={undefined}>
-                                <h3 className={cx('search-title')}>Accounts</h3>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input type="text" placeholder="Tìm kiếm tài khoản và video" />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-
-                        <FontAwesomeIcon className={cx('load')} icon={faSpinner} />
-
-                        <button className={cx('search-btn')}>
-                            <SearchIcon />
-                        </button>
-                    </div>
-                </TippyHeadless>
+                <Search />
                 <div className={cx('actions')}>
                     <Button leftIcon={<AddIcon />} className={cx('upload')} to="/upload">
                         Tải lên
@@ -112,7 +73,7 @@ function Header() {
                         <>
                             <Button primary>Đăng nhập</Button>
 
-                            <Menu items={MENU_ITEMS} onChange={() => handleMenuChange}>
+                            <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                                 <button className={cx('more-btn')}>
                                     <FontAwesomeIcon icon={faEllipsisVertical} />
                                 </button>
@@ -121,16 +82,17 @@ function Header() {
                     ) : (
                         <>
                             <Tippy delay={[0, 100]} content="Tin nhắn" placement="bottom">
-                                <button className={cx('send-icon')}>
+                                <button className={cx('inbox-icon')}>
                                     <InboxIcon />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 100]} content="Hộp thư" placement="bottom">
                                 <button className={cx('message-icon')}>
                                     <MessageIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
-                            <Menu items={userMenu} onChange={() => handleMenuChange}>
+                            <Menu items={userMenu} onChange={handleMenuChange}>
                                 <Image className={cx('user-avatar')} src={images.avatar1} alt="user" />
                             </Menu>
                         </>
