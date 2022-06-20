@@ -36,6 +36,17 @@
         color: rgba(22, 24, 35, 0.34);
         width: 40px;
     }
+    .load {
+        animation: spinner 1s linear infinite;
+    }
+    @keyframes spinner {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
     &-btn {
         display: flex;
         align-items: center;
