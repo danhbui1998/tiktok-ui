@@ -16,13 +16,13 @@ import Tippy from '@tippyjs/react/';
 import 'tippy.js/dist/tippy.css';
 
 import Button from '~/components/Button';
-
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
 import { MessageIcon, InboxIcon, AddIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -61,12 +61,12 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('container')}>
-                <Link to="/" className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
                 <Search />
                 <div className={cx('actions')}>
-                    <Button leftIcon={<AddIcon />} className={cx('upload')} to="/upload">
+                    <Button leftIcon={<AddIcon />} className={cx('upload')} to={routesConfig.upload}>
                         Tải lên
                     </Button>
                     {!isLogin ? (
