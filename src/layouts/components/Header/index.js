@@ -22,7 +22,7 @@ import Menu from '~/components/Popper/Menu';
 import { MessageIcon, InboxIcon, AddIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -61,12 +61,12 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('container')}>
-                <Link to={routesConfig.home} className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
                 <Search />
                 <div className={cx('actions')}>
-                    <Button leftIcon={<AddIcon />} className={cx('upload')} to={routesConfig.upload}>
+                    <Button leftIcon={<AddIcon />} className={cx('upload')} to={config.routes.upload}>
                         Tải lên
                     </Button>
                     {!isLogin ? (

@@ -8,7 +8,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import { useDebounce } from '~/hooks';
-import * as searchApi from '~/api/searchApi';
+import * as searchApi from '~/apis/searchApi';
 
 import styles from './Search.module.scss';
 
