@@ -22,12 +22,16 @@
 .menu-popper {
     padding-bottom: 8px;
 }
+.menu-wrapper {
+    overflow-y: auto;
+}
 
 // Menu Header Language
 .header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-shrink: 0;
     height: 50px;
     // padding: 0 30px 0 10px;
     padding-right: 30px;

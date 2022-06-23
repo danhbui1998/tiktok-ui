@@ -60,44 +60,48 @@ function Search() {
     };
 
     return (
-        <TippyHeadless
-            interactive
-            visible={showResult && searchResult.length > 0}
-            render={(attrs) => (
-                <div className={cx('search-result')} tabIndex={-1} {...attrs}>
-                    <PopperWrapper className={undefined}>
-                        <h3 className={cx('search-title')}>Tài khoản</h3>
-                        {searchResult.map((result) => (
-                            <AccountItem key={result.id} data={result} />
-                        ))}
-                    </PopperWrapper>
-                </div>
-            )}
-            onClickOutside={handleHideResult}
-        >
-            <div className={cx('search')}>
-                <input
-                    ref={inputRef}
-                    type="text"
-                    placeholder="Tìm kiếm tài khoản và video"
-                    value={searchValue}
-                    onChange={handleValueSearch}
-                    onFocus={() => setShowResult(true)}
-                />
-
-                {!loading && searchValue && (
-                    <button className={cx('clear')} onClick={handleClearSearch}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
+        // Using a wrapper <div> or <span> tag around the reference element solves
+        // this by creating a new parentNode context.
+        <div>
+            <TippyHeadless
+                interactive
+                visible={showResult && searchResult.length > 0}
+                render={(attrs) => (
+                    <div className={cx('search-result')} tabIndex={-1} {...attrs}>
+                        <PopperWrapper className={undefined}>
+                            <h3 className={cx('search-title')}>Tài khoản</h3>
+                            {searchResult.map((result) => (
+                                <AccountItem key={result.id} data={result} />
+                            ))}
+                        </PopperWrapper>
+                    </div>
                 )}
+                onClickOutside={handleHideResult}
+            >
+                <div className={cx('search')}>
+                    <input
+                        ref={inputRef}
+                        type="text"
+                        placeholder="Tìm kiếm tài khoản và video"
+                        value={searchValue}
+                        onChange={handleValueSearch}
+                        onFocus={() => setShowResult(true)}
+                    />
 
-                {loading && <FontAwesomeIcon className={cx('load')} icon={faSpinner} />}
+                    {!loading && searchValue && (
+                        <button className={cx('clear')} onClick={handleClearSearch}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                    )}
 
-                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
-                    <SearchIcon className={undefined} />
-                </button>
-            </div>
-        </TippyHeadless>
+                    {loading && <FontAwesomeIcon className={cx('load')} icon={faSpinner} />}
+
+                    <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
+                        <SearchIcon className={undefined} />
+                    </button>
+                </div>
+            </TippyHeadless>
+        </div>
     );
 }
 
