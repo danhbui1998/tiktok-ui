@@ -4,8 +4,8 @@
     align-items: center;
     .container {
         margin-top: var(--default-layout-header-height);
-        padding: 0 24px 0 20px;
         width: var(--default-layout-width);
+        max-width: 100%;
         display: flex;
         .content {
             flex: 1;
