@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 
+import { CheckIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './SidebarAccounts.module.scss';
 import AccountPreview from './AccountPreview';
@@ -34,7 +33,7 @@ function SidebarAccountItem({ data }) {
                     <div className={cx('info')}>
                         <h4 className={cx('username')}>
                             <span> {data.nickname} </span>
-                            {data.tick && <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle} />}
+                            {data.tick && <CheckIcon className={cx('check-icon')} />}
                         </h4>
                         <span className={cx('fullname')}> {`${data.first_name} ${data.last_name}`} </span>
                     </div>

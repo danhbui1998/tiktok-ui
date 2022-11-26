@@ -6,7 +6,6 @@ import {
     faCircleQuestion,
     faCoins,
     faEarthAsia,
-    faEllipsisVertical,
     faGears,
     faKeyboard,
     faSignOut,
@@ -19,7 +18,7 @@ import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
-import { MessageIcon, InboxIcon, AddIcon } from '~/components/Icons';
+import { MessageIcon, InboxIcon, AddIcon, EllipsisVerticalIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
 import config from '~/config';
@@ -74,8 +73,9 @@ function Header() {
                             <Button primary>Đăng nhập</Button>
 
                             <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
-                                <button className={cx('more-btn')}>
-                                    <FontAwesomeIcon icon={faEllipsisVertical} />
+                                <button className={cx('menu-btn')}>
+                                    {/* <FontAwesomeIcon icon={faEllipsisVertical} /> */}
+                                    <EllipsisVerticalIcon />
                                 </button>
                             </Menu>
                         </>

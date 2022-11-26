@@ -38,9 +38,11 @@
                     background-color: rgba(22, 24, 35, 0.03);
                 }
             }
-            .more-btn {
+            .menu-btn {
                 background-color: transparent;
-                padding: 4px 8px;
+                display: flex;
+                align-items: center;
+                padding: 0px 4px;
                 font-size: 2rem;
                 margin-left: 16px;
                 cursor: pointer;
