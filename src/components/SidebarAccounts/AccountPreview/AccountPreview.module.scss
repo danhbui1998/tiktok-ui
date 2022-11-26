@@ -1,0 +1,49 @@
+.wrapper {
+    padding: 20px;
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .preview_btn-follow {
+            height: 34px;
+        }
+    }
+    .info {
+        margin: 12px 0;
+        display: flex;
+        flex-direction: column;
+        .username {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            .check-icon {
+                margin-left: 4px;
+                font-size: 1.4rem;
+                color: rgb(32, 213, 236);
+            }
+        }
+        .fullname {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
+    .analytics {
+        font-size: 1.8rem;
+        .value ~ .value {
+            margin-left: 20px;
+        }
+        .label {
+            color: #161823bf;
+            margin-left: 4px;
+            font-weight: 400;
+        }
+    }
+}

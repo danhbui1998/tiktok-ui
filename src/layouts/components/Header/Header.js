@@ -26,7 +26,7 @@ import config from '~/config';
 
 const cx = classNames.bind(styles);
 
-const isLogin = true;
+const isLogin = false;
 
 const MENU_ITEMS = [
     {

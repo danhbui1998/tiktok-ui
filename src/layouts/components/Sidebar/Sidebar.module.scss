@@ -1,4 +1,28 @@
 .wrapper {
     width: 356px;
-    padding: 20px 0 26px 8px;
+    padding: 20px 8px 26px 8px;
+    .sidebar-login {
+        margin-top: 8px;
+        position: relative;
+        padding: 20px 8px 24px 8px;
+        .login-text {
+            color: #16182380;
+            line-height: 22px;
+        }
+        .btn-large {
+            width: 100%;
+            min-height: 48px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            top: 0;
+            height: 1px;
+            background: rgba(22, 24, 35, 0.12);
+        }
+    }
 }
