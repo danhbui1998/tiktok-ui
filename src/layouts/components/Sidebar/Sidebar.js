@@ -15,6 +15,7 @@ import {
 import SidebarAccounts from '~/components/SidebarAccounts';
 import Button from '~/components/Button';
 import * as userApi from '~/apis/userApi';
+import Footer from '../Footer';
 
 const cx = classNames.bind(styles);
 
@@ -55,6 +56,8 @@ function Sidebar() {
                     </Button>
                 </div>
                 <SidebarAccounts label="Tài khoản được đề xuất" data={suggestedUser} />
+
+                <Footer />
             </Menu>
         </aside>
     );
