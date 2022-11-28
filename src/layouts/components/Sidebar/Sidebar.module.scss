@@ -1,5 +1,14 @@
 .wrapper {
     width: 356px;
+    // padding-right: 8px;
+    position: fixed;
+    height: 100vh;
+    transition: all 0.3s;
+    overflow: hidden;
+    &:hover {
+        overflow: overlay;
+    }
+    width: 356px;
     padding: 20px 8px 26px 8px;
     .sidebar-login {
         margin-top: 8px;
