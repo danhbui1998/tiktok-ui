@@ -19,7 +19,7 @@
     .content {
         flex: 1;
         margin-left: 12px;
-        width: 510px;
+        // max-width: 510px;
         position: relative;
         .info {
             .author {
@@ -176,6 +176,59 @@
             right: 0;
             font-weight: 600;
             height: 28px;
+        }
+    }
+}
+
+/* Tablet & moblie */
+
+@media (max-width: 1023px) {
+    .video-item {
+        .content {
+            .info {
+                .desc {
+                    max-width: 410px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 739px) {
+    .video-item {
+        .content {
+            .info {
+                .desc {
+                    max-width: 350px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .video-item {
+        .avatar {
+            width: 32px;
+            height: 32px;
+        }
+        .content {
+            max-width: 410px;
+
+            .info {
+                .author {
+                    display: block;
+                }
+                .desc {
+                    display: none;
+                }
+            }
+            .video-wrapper {
+                .video-feed {
+                    .video {
+                        width: 240px;
+                    }
+                }
+            }
         }
     }
 }

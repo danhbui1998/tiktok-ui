@@ -95,3 +95,14 @@
     font-weight: 600;
     color: rgba(22, 24, 35, 0.5);
 }
+@media (max-width: 1023px) {
+    .search {
+        width: 300px;
+    }
+}
+// Mobile
+@media (max-width: 739px) {
+    .search {
+        display: none;
+    }
+}

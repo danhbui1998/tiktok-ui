@@ -1,37 +1,68 @@
-.wrapper {
+.sidebar {
     width: 356px;
-    // padding-right: 8px;
-    position: fixed;
-    height: 100vh;
-    transition: all 0.3s;
-    overflow: hidden;
-    &:hover {
-        overflow: overlay;
+    max-width: 356px;
+    .wrapper {
+        max-width: 356px;
+        max-width: 356px;
+        position: fixed;
+        height: 100vh;
+        transition: all 0.3s;
+        overflow: hidden;
+        &:hover {
+            overflow: overlay;
+        }
+        width: 356px;
+        padding: 20px 8px 26px 8px;
+        .sidebar-login {
+            margin-top: 8px;
+            position: relative;
+            padding: 20px 8px 24px 8px;
+            .login-text {
+                color: #16182380;
+                line-height: 22px;
+            }
+            .btn-large {
+                width: 100%;
+                min-height: 48px;
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 8px;
+                right: 8px;
+                top: 0;
+                height: 1px;
+                background: rgba(22, 24, 35, 0.12);
+            }
+        }
     }
-    width: 356px;
-    padding: 20px 8px 26px 8px;
-    .sidebar-login {
-        margin-top: 8px;
-        position: relative;
-        padding: 20px 8px 24px 8px;
-        .login-text {
-            color: #16182380;
-            line-height: 22px;
+}
+
+/* Tablet & moblie */
+
+@media (max-width: 1023px) {
+    .sidebar {
+        width: 120px;
+        max-width: 120px;
+        .wrapper {
+            border-right: 1px solid rgba(22, 24, 35, 0.12);
+            width: 120px;
+            max-width: 120px;
+            .sidebar-login {
+                display: none;
+            }
         }
-        .btn-large {
-            width: 100%;
-            min-height: 48px;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        &::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            right: 8px;
-            top: 0;
-            height: 1px;
-            background: rgba(22, 24, 35, 0.12);
+    }
+}
+@media (max-width: 739px) {
+    .sidebar {
+        width: 80px;
+        max-width: 80px;
+        .wrapper {
+            width: 80px;
+            max-width: 80px;
         }
     }
 }

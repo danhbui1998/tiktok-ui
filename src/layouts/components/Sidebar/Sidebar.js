@@ -33,21 +33,28 @@ function Sidebar() {
     }, []);
 
     return (
-        <aside className={cx('wrapper')}>
-            <Menu>
-                <MenuItem
-                    title="Dành cho bạn"
-                    to={config.routes.home}
-                    icon={<HomeIcon />}
-                    activeIcon={<HomeActiveIcon />}
-                />
-                <MenuItem
-                    title="Đang Follow"
-                    to={config.routes.following}
-                    icon={<UserGroupIcon />}
-                    activeIcon={<UserGroupActiveIcon />}
-                />
-                <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
+        <div className={cx('sidebar')}>
+            <aside className={cx('wrapper')}>
+                <Menu>
+                    <MenuItem
+                        title="Dành cho bạn"
+                        to={config.routes.home}
+                        icon={<HomeIcon />}
+                        activeIcon={<HomeActiveIcon />}
+                    />
+                    <MenuItem
+                        title="Đang Follow"
+                        to={config.routes.following}
+                        icon={<UserGroupIcon />}
+                        activeIcon={<UserGroupActiveIcon />}
+                    />
+                    <MenuItem
+                        title="LIVE"
+                        to={config.routes.live}
+                        icon={<LiveIcon />}
+                        activeIcon={<LiveActiveIcon />}
+                    />
+                </Menu>
                 {/* <SidebarAccounts label="Tài khoản đã đăng ký" /> */}
                 <div className={cx('sidebar-login')}>
                     <p className={cx('login-text')}>Đăng nhập để follow các tác giả, thích video và xem bình luận.</p>
@@ -58,8 +65,8 @@ function Sidebar() {
                 <SidebarAccounts label="Tài khoản được đề xuất" data={suggestedUser} />
 
                 <Footer />
-            </Menu>
-        </aside>
+            </aside>
+        </div>
     );
 }
 

@@ -34,3 +34,12 @@
         display: none;
     }
 }
+
+@media (max-width: 1023px) {
+    .menu-item {
+        justify-content: center;
+        .title {
+            display: none;
+        }
+    }
+}

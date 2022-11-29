@@ -12,7 +12,6 @@
             width: 692px;
             max-width: 692px;
             padding: 24px 0;
-            margin-left: 442px;
             margin-right: 16px;
             .bottom {
                 position: fixed;
@@ -23,6 +22,7 @@
                 bottom: -40px;
                 margin-bottom: 8px;
                 transition: bottom ease 0.3s;
+                z-index: 10;
                 &-btn {
                     margin-bottom: 12px;
                     height: 32px;
@@ -45,6 +45,40 @@
                 &.active {
                     bottom: 0;
                 }
+            }
+        }
+    }
+}
+
+/* Tablet & moblie */
+
+@media (max-width: 1023px) {
+    .wrapper {
+        .container {
+            .content {
+                width: 592px;
+                max-width: 592px;
+            }
+        }
+    }
+}
+
+@media (max-width: 739px) {
+    .wrapper {
+        .container {
+            .content {
+                width: 492px;
+                max-width: 492px;
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .wrapper {
+        .container {
+            .content {
+                width: 392px;
+                max-width: 392px;
             }
         }
     }

@@ -77,3 +77,22 @@
         }
     }
 }
+@media (max-width: 1023px) {
+    .wrapper {
+        .label {
+            display: none;
+        }
+        .show-all {
+            display: none;
+        }
+    }
+    .account-item {
+        justify-content: center;
+        .avatar {
+            margin-right: unset;
+        }
+        .info {
+            display: none;
+        }
+    }
+}
