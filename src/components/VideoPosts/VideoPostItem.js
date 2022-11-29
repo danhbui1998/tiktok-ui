@@ -30,7 +30,7 @@ function VideoPostItem({ data }) {
     // const [isSound, setIsSound] = useState('false');
     // const [isPlay, setIsPlay] = useState('false');
 
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className={cx('video-item')}>
