@@ -1,0 +1,59 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s cubic-bezier(0.075, 0.82, 0.165, 1), visibility 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 10001;
+    &.open {
+        pointer-events: all;
+        opacity: 1;
+        visibility: visible;
+        .modal-wrapper {
+            transform: scale(1);
+        }
+    }
+    &-wrapper {
+        width: 483px;
+        max-height: 693px;
+        height: 80%;
+        background-color: #fff;
+        border-radius: 8px;
+        position: relative;
+        transform: scale(0);
+        transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    &-close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba(22, 24, 35, 0.03);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1.7);
+        cursor: pointer;
+    }
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

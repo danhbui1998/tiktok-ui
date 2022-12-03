@@ -13,7 +13,7 @@
     border: solid 1px transparent;
     user-select: none;
     cursor: pointer;
-    +.wrapper {
+    + .wrapper {
         margin-left: 16px;
     }
     &.disabled {
@@ -22,11 +22,16 @@
     }
 }
 
-.icon+.content,
-.content+.icon {
+.icon + .content,
+.content + .icon {
     margin-left: 8px;
 }
-
+.content.center {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-left: unset;
+}
 .icon {
     width: 20px;
     height: 20px;

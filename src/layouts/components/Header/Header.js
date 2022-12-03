@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,6 +24,7 @@ import { MessageIcon, InboxIcon, AddIcon, EllipsisVerticalIcon } from '~/compone
 import Image from '~/components/Image';
 import Search from '../Search';
 import config from '~/config';
+import Login from '~/components/Login';
 
 const cx = classNames.bind(styles);
 
@@ -56,6 +59,14 @@ function Header() {
     const handleMenuChange = (menuItem) => {
         // console.log(menuItem);
     };
+    const [modal, setModal] = useState(false);
+
+    const showModal = () => {
+        setModal(true);
+    };
+    const hideModal = () => {
+        setModal(false);
+    };
 
     return (
         <header className={cx('wrapper')}>
@@ -65,22 +76,23 @@ function Header() {
                 </Link>
                 <Search />
                 <div className={cx('actions')}>
-                    <Button leftIcon={<AddIcon />} className={cx('upload')} to={config.routes.upload}>
-                        Tải lên
-                    </Button>
                     {!isLogin ? (
                         <>
-                            <Button primary>Đăng nhập</Button>
+                            <Button primary onClick={showModal}>
+                                Đăng nhập
+                            </Button>
 
                             <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                                 <button className={cx('menu-btn')}>
-                                    {/* <FontAwesomeIcon icon={faEllipsisVertical} /> */}
                                     <EllipsisVerticalIcon />
                                 </button>
                             </Menu>
                         </>
                     ) : (
                         <>
+                            <Button leftIcon={<AddIcon />} className={cx('upload')} to={config.routes.upload}>
+                                Tải lên
+                            </Button>
                             <Tippy delay={[0, 100]} content="Tin nhắn" placement="bottom">
                                 <button className={cx('inbox-icon')}>
                                     <InboxIcon />
@@ -99,6 +111,7 @@ function Header() {
                     )}
                 </div>
             </div>
+            {createPortal(<Login isModal={modal} handleModal={hideModal} />, document.body)}
         </header>
     );
 }
